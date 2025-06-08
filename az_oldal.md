@@ -9,13 +9,13 @@
 1. [Geometriai optika alapfogalmai](#1-geometriai-optika-alapfogalmai-elmélet)
 2. [Geometriai optika alapelvei](#2-geometriai-optika-alapelvei-elmélet)
 3. [Fényvisszaverődés és fénytörés törvényei](#3-fényvisszaverődés-és-fénytörés-törvényei-elmélet)
-4. [A Fermat - elv](#4-a-fermat---elv-elmélet)
+4. [A Fermat - elv](#4-a-fermat---elv-elmélet)<br/>
        4.1 [Törésmutató (**n**)](#törésmutató)
 5. [Töréstörvény levezetése](#5-töréstörvény-levezetése-opcionális-levezetés)
-6. [A töréstörvény kísérleti ellenőrzése](#6-a-töréstörvény-ellenőrzése-kísérlet)
+6. [A töréstörvény kísérleti ellenőrzése](#6-a-töréstörvény-ellenőrzése-kísérlet)<br/>
        6.1[Töréstörvény videó](#a-töréstörvény-kísérleti-ellenőrzése)
 7. [Diszperzió, színekre bontás](#7-diszperzió-színekre-bontás)
-8. [Színekre bontás - kísérlet](#8-színekre-bontás-kísérlet)
+8. [Színekre bontás - kísérlet](#8-színekre-bontás-kísérlet)<br/>
        8.1 [**n** és **H** közötti összefüggés a diszperziós kísérlet során](#végső-képlet-levezetése-n-és-h-között)
 <br/>
 
