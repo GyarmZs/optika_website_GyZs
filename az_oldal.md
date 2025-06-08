@@ -1,3 +1,8 @@
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript">
+</script>
+
 <H1><center>A fény viselkedése közegek határán</center></H1>
 
 ## 0. Tartalomjegyzék 
