@@ -60,9 +60,9 @@ Ha a fénysugár két, optikailag különböző közeg határfelületére esik k
 
 ### *Törésmutató*
 A közegek jellemzésére a <strong style="color:rgb(11, 76, 5)">törésmutató</strong> mennyiséget használjuk, amit <strong style="color:rgb(11, 76, 5)">n</strong>-el jelölünk. A törésmutató a fénysebesség és az adott anyagban a fény terjedési sebességének hányadosa. Ez az **abszolút törésmutató**, amely a vákuumbeli fénysebességhez (<strong style="color:rgb(11, 76, 5)">c</strong>) viszonyítva adja meg a törésmutatót.
-$$
+'''math
 n=\frac{c}{v}
-$$
+'''
 
 Kísérletileg kimérhetőek és elméleti síkon is többféleképpen igazolhatóak a fénytörés és a fényvisszaverődés törvényei, tehát a kapcsolat a <strong style="color:rgb(11, 76, 5)">beesési</strong>, a <strong style="color:rgb(11, 76, 5)">visszaverődési</strong> és a <strong style="color:rgb(11, 76, 5)">megtört</strong> fénysugár szöge, valamint a közegre jellemző <strong style="color:rgb(11, 76, 5)">törésmutató</strong>k közt. A törvények a következők:
 
