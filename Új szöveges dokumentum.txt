@@ -1,0 +1,286 @@
+<H1><center> Geometriai optika jelenségi alapok</center></H1>
+
+tartalomjegyzek jo lenne hivatkozasokkal hogy oda ugorjon ahova akar 
+
+## 1. Geometriai optika alapfogalmai
+
+<span style="color:rgb(11, 76, 5)">**Fényforrás**</span> : Fényt kibocsátó test (saját energiáját használja fel ehhez a folyamathoz<br/> Fényforrás lehet : 
+    - pontszerű (elhanyagolhatóan kis szög alatt látható fényforrás) pl távoli csillag fénye a szemünkhöz képest
+    - vonalas (nagyon keskeny fényforrás)
+    - normál fényforrás
+
+Ezek voltak az elsődleges fényforrások, viszont bármely test visszaveri a ráeső fény egy részét, így ezek a testek <span style="color:rgb(11,76,5)">**másodlagos fényforrások**</span>.
+
+* <span style="color:rgb(11, 76, 5)"><strong>**Fénysugár**</strong></span> : A pálya (görbe), amely mentén a fény terjed
+* <span style="color:rgb(11, 76, 5)">**Fénynyaláb**</span> : Több fénysugár, amit együtt vizsgálunk                                                                                   
+ Fénynyaláb lehet :
+    - párhuzamos 
+    - széttartó (divergens)
+    - összetartó (konvergens)   
+<figure>
+<p align="center">
+  <img src="nyalabokabrakocka.svg" alt="init_result" style="width:30%">
+  <figcaption><h3 align="center">Ábra 1.   Nyalábok</h3></figcaption>
+</p>
+</figure>
+
+
+## 2. Geometriai optika alapelvei
+
+* Homogén közegben a fény egyenes vonalban terjed 
+
+* A fénysugarak egymástól függetlenül terjednek
+* a fénysugarak terjedése megfordítható, tehát két pont közt mindkét irányban ugyanaz a fénysugár, ugyanazt a pályát teszi meg a fény A pontból B pontba és B pontból A pontba
+* A geometriai optika akkor alkalmazható, ha az optikai rendszer (karakterisztikus) mérete sokkal nagyobb, mint a fénysugarak hullámhossza
+* Érvényes a Fermat-elv
+
+
+## 3. Fényvisszaverődés és fénytörés törvényei
+
+Ha a fénysugár két, optikailag különböző közeg határfelületére esik két dolog fog történni:
+* A fénysugár egy része visszaverődik a felületről, ez a <span style="color:rgb(11, 76, 5)">**fényvisszaverődés**</span>
+
+* A fénysugár másik része áthalad a közeghatáron és irányt változtatva halad tovább a közegben, amibe behatolt. Ez a <span style="color:rgb(11, 76, 5)"> **fénytörés**</span> jelensége
+
+### *Törésmutató*
+A közegek jellemzésére a <span style="color:rgb(11, 76, 5)">**törésmutató**</span> mennyiséget használjuk, amit **n**-el jelölünk. A törésmutató a fénysebesség és az adott anyagban a fény terjedési sebességének hányadosa. Ez az **abszolút törésmutató**, amely a vákuumbeli fénysebességhez (<span style="color:rgb(11, 76, 5)">**c**</span>) viszonyítva adja meg a törésmutatót.
+$$
+n=\frac{c}{v}
+$$
+
+Kísérletileg kimérhetőek a fénytörés és a fényvisszaverődés törvényei, tehát a kapcsolat a <span style="color:rgb(11, 76, 5)">**beesési**</span>, a <span style="color:rgb(11, 76, 5)">**visszaverődési**</span> és a <span style="color:rgb(11, 76, 5)">**megtört**</span> fénysugár szöge, valamint a közegre jellemző <span style="color:rgb(11, 76, 5)">**törésmutató**</span>k közt. A törvények a következők:
+
+* A beeső, a megtört (áthaladt) és a visszavert fénysugár mind **egy síkban vannak** 
+
+* a beesési merőlegeshez mérve (ez az az egyenes amely merőleges a két közeg határfelületére a beesési pontban) a <span style="color:rgb(11, 76, 5)">**beesési szög**</span> és a <span style="color:rgb(11, 76, 5)">**visszaverődési szög**</span> mértéke **egyenlő** 
+$$
+\vert \hat {i_1}\vert=\vert \hat {i_3}\vert
+$$
+
+* Mindig érvényes a **Snellius-Descartes-töréstörvény**, ez a következő:
+$$
+n_1\cdot \sin(i_1) = n_2\cdot \sin(i_2),
+$$
+ahol <span style="color:rgb(11, 76, 5)">**n<sub>1</sub>**</span> az 1-es, <span style="color:rgb(11, 76, 5)">**n<sub>2</sub>**</span> pedig a 2-es közeg abszolút törésmutatója, <span style="color:rgb(11, 76, 5)">**sin(i<sub>1</sub>)**</span> a beesési szög szinusza, <span style="color:rgb(11, 76, 5)">**sin(i<sub>2</sub>)**</span> pedig a törési szög szinusza
+
+<figure>
+<p align="center" >
+  <img src="torestorvenyabrakocka.svg" style="width:70%">
+  <figcaption><h3 align="center">Ábra 2. - Fénytörés és fényvisszaverődés törvényei</h3></figcaption>
+</p>
+</figure>
+
+
+## 4. **A Fermat - elv**
+```
+Bármely fénysugár egy tetszőleges optikai rendszerben mindig olyan pályát követ, amelyre nézve a kezdő és végpontok közötti terjedési idő minimális vagy maximális (legtöbb esetben minimális).
+```
+Másképpen megfogalmazva:
+```
+Bármely közegben A és B pontok között a fény azon a görbén halad, amely mentén az optikai útnak szélsőértéke van 
+```
+Az optikai út a megtett távolság és a törésmutató szorzata egy közegben. Ha több közegünk van, akkor ez összeadódik. 
+$$
+L=n_1\cdot l_1 + n_2\cdot l_2 + n_3\cdot l_3 + ... + n_N\cdot l_N 
+$$
+
+## 5. Töréstörvény levezetése (*opcionális*)
+A Fermat-elvből kiindulva középiskolás matematikai számításokat használva egyértelműen kimutatható a töréstörvény.<br/>
+Vegyünk tetszőleges két pontot (**A** és **B**) két közegben, melyet egy határfelület választ el. A két közeg <span style="color:rgb(11, 76, 5)">**n<sub>1</sub>**</span> és <span style="color:rgb(11, 76, 5)">**n<sub>2</sub>**</span> törésmutatóval rendelkeznek.
+
+<figure>
+<p align="center" >
+  <img src="fermatelveslevezeteskocka.svg" style="width:50%">
+  <figcaption><h3 align="center">Ábra 3. - Fénytörés és fényvisszaverődés törvények levezetése </h3></figcaption>
+</p>
+</figure>
+<br/>
+
+Felírjuk **AOX** háromszögben a Pitagorasz-tételt, kifejezve <span style="color:rgb(115, 103, 10)">**l<sub>1</sub>**</span>-et (átfogó), ami a fénysugár által megtett út az 1-es közegben.
+$$
+l_1\space^2=x^2+h_1\space ^2
+$$
+$$
+l_1=\sqrt{x^2+h_1\space ^2}
+$$
+Felírjuk **BCX** háromszögben is a Pitagorasz-tételt, kifejezve <span style="color:rgb(115, 103, 10)">**l<sub>2</sub>-t**</span> (átfogó), ami a fénysugár által megtett út a 2-es közegben<br/> **[CX]** szakasz hossza: **D - x**
+$$
+l_2\space^2=(D-x)^2+h_2\space ^2
+$$
+$$
+l_2=\sqrt{(D-x)^2+h_2\space ^2}
+$$
+A Fermat elv azt mondja ,hogy az optikai útnak szélsőértéke kell legyen. Felírjuk az optikai utat **A**-ból  **B**-be
+$$
+L= n_1\cdot l_1 + n_2\cdot l_2
+$$
+$$
+L= n_1\cdot \sqrt{x^2+h_1\space ^2} + n_2\cdot \sqrt{(D-x)^2+h_2\space ^2}
+$$
+Szélsőértékét keresünk <span style="color:rgb(115, 103, 10)">**L**</span>-nek. <span style="color:rgb(115, 103, 10)">**L**</span> csakis az <span style="color:rgb(76, 21, 21)">**x**</span> hossztól függ, a többi mennyiség mind állandó, tehát a szélsőértékfeltétel a következő:
+$$
+\frac{\mathrm dL}{\mathrm dx}=0
+$$
+kiszámítjuk a bal oldalt:
+$$
+\frac{\mathrm dL}{\mathrm dx}=\frac{\mathrm d}{\mathrm dx}(n_1\cdot \sqrt{x^2+h_1\space ^2} + n_2\cdot \sqrt{(D-x)^2+h_2\space ^2})= 
+$$
+$$
+n_1\cdot \frac{1}{2\cdot\sqrt{x^2+h_1\space ^2}}\cdot\frac{\mathrm d}{\mathrm dx}(x^2+h_1)\space ^2 + n_2\cdot\frac{1}{2\cdot\sqrt{(D-x)^2+h_2\space ^2}}\cdot\frac{\mathrm d}{\mathrm dx}((D-x)^2+h_2\space^2)= 
+$$
+$$
+n_1\cdot \frac{1}{2\cdot\sqrt{x^2+h_1\space ^2}}\cdot 2\cdot x\space + n_2\cdot\frac{1}{2\cdot\sqrt{(D-x)^2+h_2\space ^2}}\cdot2\cdot (D-x)\cdot(-1)\space= 
+$$
+$$
+n_1\cdot \frac{x}{\sqrt{x^2+h_1\space ^2}} - n_2\cdot\frac{D-x}{\sqrt{(D-x)^2+h_2\space ^2}}\space=
+$$
+$$
+n_1\cdot \frac{x}{l_1} - n_2\cdot\frac{D-x}{l_2}\space
+$$
+
+
+Észrevesszük, hogy az **AOX** és **BCX** háromszögben: $$\frac{x}{l_1} = \sin(i_1)$$ $$\frac{D-x}{l_2} = \sin(i_2)$$ <br/>
+Tehát  
+$$
+\frac{\mathrm dL}{\mathrm dx}=n_1\cdot \sin(i_1) - n_2\cdot\sin(i_2)=0
+$$
+Ebből tehát következik:
+$$
+n_1\cdot \sin(i_1) = n_2\cdot\sin(i_2)
+$$
+Tehát igazoltuk a töréstörvényt. Észrevehető továbbá, hogy **A** és **B** pontot bárhol, bármilyen pozícióba választom a közeg két oldalán, az eredmény a pozícióktól független, tehát általános esetben is érvényes a töréstörvény<br/>
+
+
+## 6. A töréstörvény ellenőrzése [kísérlet]
+
+A kísérlethez vegyünk egy átlátszó tálat, ami téglatest alakú és töltsük fel vízzel. Egy lézerpointerrel érdemes a kísérletet végezni, hiszen  eléggé megközelíti a pontszerű viselkedést, tehát a keskeny sugarú nyaláb jól látható lesz az edény falán. Egy másik kiküszöbölhető jelenség a diszperzió (<span style="color:rgb(12, 12, 66)">erről később</span>), hiszen a lézerpointer jó közelítéssel monomkromatikus, egyszínű (én &lambda; = 650 nm hullámosszút használtam) .
+
+<figure>
+<p align="center" >
+  <img src="SnelliusDescatresliserletkocka.svg" style="width:60%">
+  <figcaption><h3 align="center">Ábra 4. - Kísérleti berendezés felülnézetből </h3></figcaption>
+</p>
+</figure> 
+
+<figure>
+<p align="center" >
+  <img src="szogmerokocka.svg" style="width:40%">
+  <figcaption><h3 align="center">Ábra 5. - Az x=0 koordináta meghatározása </h3></figcaption>
+</p>
+</figure> 
+
+* Meghatározzuk az <span style="color:rgb(11, 76, 5)">**x**</span> = 0 koordinátát a szögmérő segítségével
+
+
+* Az <span style="color:rgb(11, 76, 5)">**i<sub>1</sub>**</span> beesési szög közvetlenül mérhető a szögmérő korongon, számológéppel pedig kiszámolható <span style="color:rgb(11, 76, 5)">**sin(i<sub>1</sub>)** </span>
+* A víz törésmutatója, <span style="color:rgb(11, 76, 5)">**n**</span> ismert nagy pontossággal, a vörös (&lambda; = 650 nm hullámhosszú) fényre ez az érték <span style="color:rgb(11, 76, 5)">**n**</span> = 1.33257.
+* <span style="color:rgb(11, 76, 5)">**x**</span> értékét le tudjuk mérni az edény falán, ekkor <span style="color:rgb(11, 76, 5)">**y**</span> értéke az edény szélessége
+* Ha a fénysugár nem a közeghatárral szemközti, hanem az edény oldalsó falára esik, akkor <span style="color:rgb(11, 76, 5)">**y**</span> értékét le tudjuk mérni az edény oldalsó falán, ekkor <span style="color:rgb(11, 76, 5)">**x**</span> értéke az edény falán mérve a belépési ponttól, a 0 koordinátától mérem az edény végéig. 
+
+* a levegő törésmutatóját 1-nek tekintjük
+
+
+Tehát ismerve a mérendő mennyiségeket felírjuk a töréstörvényt:
+$$
+\sin(\hat i_1)=n\cdot\sin(\hat i_2)
+$$
+Behelyettesítve az ismert mennyiségeket
+$$
+\sin(\hat i_1)=n\cdot\frac{x}{y}
+$$
+
+Ábrázolva egy grafikonon sin(***i<sub>1</sub>***)-et sin(***i<sub>2</sub>***) függvényében az ábrázolt pontok egy egyenesre illeszkednek majd. Ennek  az egyenesnek meghatározva az iránytényezőjét vissza kell kapnunk **n** értékét. A kísérlet során léphetnek fel pontatlanságok, de az eredmény találni fog jó közelítéssel a már ismert törésmutató értékkel, így igazolhatjuk, hogy a töréstörvény nem csak elméletileg, hanem kísérletben is, a valóságban igaz.
+
+
+
+VVVVVVVVVIIIIIIIIIIIIIIIIDDDDDDDDDEEEEEEEEEEEOOOOOOOOOOO  A torestorvenyes kiserletrol
+
+
+
+## 7. Diszperzió, színekre bontás
+
+A diszperzió fogalma azzal kapcsolatos, hogy egy hullám terjedési sebessége függ a hullám frekvenciájától (tehát hullámhosszától is). Ez a fény esetén azt jelenti, hogy a fény egy átlátszó közegben más sebességgel terjed. <sup>(1)</sup> <br/>
+
+<sup>(1)</sup><small>ez a sebesség nem a fénysebesség, hanem a közeg elektronjai által keltett elektromágneses hullámok szuperpozíciójának, vagyis összegének a terjedési sebessége , tehát a fénysebesség továbbra is állandó, c = 299 792 458 m/s ! A kíváncsiabbaknak itt található egy angol nyelvű, magasabb szintű, de jól követhető, vizuális magyarázat erről a jelenségről  [  **link a videóhoz**  ](https://youtu.be/KTzGBJPuJwM?si=Xbgp-1il2tdr_prH)</small>.
+
+mivel **n** törésmutatót úgy határoztuk meg, mint a fénysebesség és a közegbeli terjedési sebesség hányadosa , így a törésmutató is más lesz különböző hullámhosszakra. **n** **&lambda;** függvénye, **n** függ **&lambda;**-tól.
+$$n=n(\lambda)$$
+
+## 8. Színekre bontás [kísérlet]
+
+Kísérletileg bebizonyíthatjuk ezen kapcsolat létezését.<br/>Építsük meg a következő kísérleti berendezést:
+
+<figure>
+<p align="center">
+  <img src="VIZES PRIZMA[90_fok]kocka.svg" style="width:90%">
+  <figcaption><h3 align="center">Ábra 6. - Kísérleti berendezés oldalnézetből </h3></figcaption>
+</p>
+</figure> 
+
+* Egy tálba belehelyezünk egy síktükröt, az alját megtámasztjuk, hogy ne mozduljon meg.
+
+* Ki kell számítanunk a tükör és a vízszintes közti szög szinuszát (<span style="color:rgb(11, 76, 5)"> **sin(&alpha;)**</span> ) .
+A doboz oldalán felülről nézve, egy vonalzó segítségével bejelöljük a tükör alját, ez a kezdeti 0 koordináta.
+Feltöltjük vízzel az edényt. A 0 koordinátától a doboz oldalán nézve megmérjük vízszintes irányba az <span style="color:rgb(11, 76, 5)">**x1**</span> távolságot, amit a tükörfelület és a vízfelület találkozási pontjáig mérünk .
+
+* Ahol a vízfelület és a tükörfelület találkozik egy bejegyzést rajzolunk. Kivéve a tükröt a vízből megmérhetjük a tükör vízben levő részének hosszát, ez <span style="color:rgb(11, 76, 5)">**x2**</span>. Így 
+$$
+\cos(\alpha)= \frac{x1}{x2}
+$$
+$$
+\sin(\alpha)= \frac{\sqrt{x_2\space^2-x_1\space^2}}{x_2}
+$$
+* Meg kell mérnünk továbbá a vízfelület és a tükörfelület találkozási pontjától a távolságot az ernyőig(falig), ahol nézni fogjuk a felbontott fénysugarakat. Ez <span style="color:rgb(11, 76, 5)">**D**</span>. <br/>
+
+* Amikor a keskeny fénysugárral megvilágítjuk függőlegesen a tükröt a vizen keresztül, fontos , hogy egy meghatározott helyen tegyük ezt. Érdemes lemérni, hogy <span style="color:rgb(11, 76, 5)">**x<sub>1</sub>**</span> hányad része az ábrán bejelölt <span style="color:rgb(11, 76, 5)">**&epsilon; &middot; x<sub>1</sub>**</span> távolság.
+
+<span style="color:rgb(11, 76, 5)"> **x<sub>1</sub>**</span>
+
+Ezek az értékek állandók a kísérlet során. A táblázatban láthatóak ezek az értékek:
+
+| **x<sub>1</sub>**|**y<sub>1</sub>** |**x<sub>2</sub>** | **D** | **&epsilon;**|
+|------------|---|------|---|--|
+| 0 koordináta és a <br/>két felület találkozása<br/>vízszintesen mérve | vízszint |(magasság) | tükör vízben <br/>levő hossza |**x1** hányad részénél <br/>jut be a fénysugár<br/> a vízbe|
+| . | . | . | . | . |
+----
+<br/>
+
+Ha megvagyunk a konstansok megmérésével, akkor világítsuk meg a vizet merőlegesen felülről. A falon (ernyőn) színes csíkok jelennek meg szivárványszerűen. Mi kiválasztjuk a középsőt és két jól látható színt választunk. Ezeknek megmérjük egymáshoz képesti távolságát az ernyőn, ismerve a színekhez tartozó fény hullámhosszakat. A hullámhosszakhoz tartozó törésmutatók az alábbi táblázatban találhatóak meg:
+
+
+
+ &lambda;| n | szin |
+|------------|---|------|
+| 400 | 1,34451 | <span style="background-color:rgb(211, 0, 255)">_____________</span> |
+| 425 | 1,34235 | <span style="background-color:rgb(80, 1, 251)">_____________</span> |
+| 450 | 1,34055 | <span style="background-color:rgb(0, 51, 255)">_____________</span> |
+| 475 | 1,33903 | <span style="background-color:rgb(0, 181, 255)">_____________</span> |
+| 500 | 1,33772 | <span style="background-color:rgb(0, 254, 130)">_____________</span> |
+| 525 | 1,33659 | <span style="background-color:rgb(56, 254, 0)">_____________</span> |
+| 550 | 1,33560 | <span style="background-color:rgb(146, 254, 1)">_____________</span> |
+| 575 | 1,33472 | <span style="background-color:rgb(237, 227, 41)">_____________</span> |
+| 600 | 1,33393 | <span style="background-color:rgb(254, 177, 1)">_____________</span> |
+| 625 | 1,33322 | <span style="background-color:rgb(255, 78, 0)">_____________</span> |
+| 650 | 1,33257 | <span style="background-color:rgb(254, 0, 0)">_____________</span> |
+| 675 | 1,33197 | <span style="background-color:rgb(254, 0, 0)">_____________</span> |
+| 700 | 1,33141 | <span style="background-color:rgb(251, 1, 2)">_____________</span> |
+<p align="center">Táblázat 1. - Adott hullámhossz esetén a víz törésmutatójának értéke </p>
+
+Még ennél is pontosabb mérések esetén használhatóak David J. Segelstein 1981 ben kimért adatai a víz törésmutatójára [PDFET HOGYAN KELL BETENNI LINKKENT?????](<VIZ TORESMUTATOJA_SegelsteinComRefInd.pdf>) . Ebben a táblázatban a hullámszám van megadva és a törésmutató, tehát ha a hullámhosszra és a törésmutatóra van szükségünk akkor egy kis átalakítással megkapható a kívánt érték.<br/>
+Az első oszlopban a hullámszám (&tilde;&nu;) értéke van megadva. Innen a hullámhossz megkapható:$$\lambda(nm)=\frac{10^7}{\tilde\nu} \space (nm)$$
+
+
+
+<span style="color:rgb(11, 76, 5)">Mrs. Robinson</span>
+
+
+
+
+
+
+
+
+
+
+
+

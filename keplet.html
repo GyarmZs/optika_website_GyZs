@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kepletem</title>
+  </head>
+  <body>
+    <main>
+        H <input id="hinput" type="number" name="h"/> <br> 
+        D <input id="dinput" type="number" name="d"/> <br> 
+        x<sub>1</sub><input id="x1input" type="number" name="x1"/> <br>
+        x<sub>2</sub><input id="x2input" type="number" name="x2"/> <br>
+        <button id="btn-calc">Calculate</button>
+        <input id="noutput" type="number" name="n"/>
+    </main>
+    <script>
+        const hinput = document.getElementById("hinput");
+        const noutput = document.getElementById("noutput");
+        const calcBtn = document.getElementById("btn-calc");
+
+        calcBtn.addEventListener("click", () => {
+        noutput.value = hinput.value;
+      })
+    </script>
+  </body>
+</html>
