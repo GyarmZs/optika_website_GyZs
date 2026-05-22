@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fénysugarak tulajdonságai.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<H1><center>A fény viselkedése közegek határán</center></H1>
+<h2 id="0-tartalomjegyz%C3%A9k">0. Tartalomjegyzék</h2>
+<ol>
+<li><a href="#1-geometriai-optika-alapfogalmai-elm%C3%A9let">Geometriai optika alapfogalmai</a></li>
+<li><a href="#2-geometriai-optika-alapelvei-elm%C3%A9let">Geometriai optika alapelvei</a></li>
+<li><a href="#3-f%C3%A9nyvisszaver%C5%91d%C3%A9s-%C3%A9s-f%C3%A9nyt%C3%B6r%C3%A9s-t%C3%B6rv%C3%A9nyei-elm%C3%A9let">Fényvisszaverődés és fénytörés törvényei</a></li>
+<li><a href="#4-a-fermat---elv-elm%C3%A9let">A Fermat - elv</a>
+4.1 <a href="#t%C3%B6r%C3%A9smutat%C3%B3">Törésmutató (<strong>n</strong>)</a></li>
+<li><a href="#5-t%C3%B6r%C3%A9st%C3%B6rv%C3%A9ny-levezet%C3%A9se-opcion%C3%A1lis-levezet%C3%A9s">Töréstörvény levezetése</a></li>
+<li><a href="#6-a-t%C3%B6r%C3%A9st%C3%B6rv%C3%A9ny-ellen%C5%91rz%C3%A9se-k%C3%ADs%C3%A9rlet">A töréstörvény kísérleti ellenőrzése</a>
+6.1<a href="#a-t%C3%B6r%C3%A9st%C3%B6rv%C3%A9ny-k%C3%ADs%C3%A9rleti-ellen%C5%91rz%C3%A9se">Töréstörvény videó</a></li>
+<li><a href="#7-diszperzi%C3%B3-sz%C3%ADnekre-bont%C3%A1s">Diszperzió, színekre bontás</a></li>
+<li><a href="#8-sz%C3%ADnekre-bont%C3%A1s-k%C3%ADs%C3%A9rlet">Színekre bontás - kísérlet</a>
+8.1 <a href="#v%C3%A9gs%C5%91-k%C3%A9plet-levezet%C3%A9se-n-%C3%A9s-h-k%C3%B6z%C3%B6tt"><strong>n</strong> és <strong>H</strong> közötti összefüggés a diszperziós kísérlet során</a>
+<br/></li>
+</ol>
+<p><small><small><small><em><a href="#0-tartalomjegyz%C3%A9k">Tartalomjegyzék</a></em></small></small></small></p>
+<h2 id="1-geometriai-optika-alapfogalmai-elm%C3%A9let">1. Geometriai optika alapfogalmai [<em>elmélet</em>]</h2>
+<ul>
+<li><strong style="color:rgb(11, 76, 5)">Fényforrás</strong> : Fényt kibocsátó test (saját energiáját használja fel a fény kibocsátásához, általában más típusú energiát alakít át fénnyé)<br/> Fényforrás lehet :
+<ul>
+<li>pontszerű (elhanyagolhatóan kis szög alatt látható fényforrás) pl távoli csillag fénye a szemünkhöz képest</li>
+<li>vonalas (nagyon keskeny fényforrás)</li>
+<li>normál fényforrás</li>
+</ul>
+</li>
+</ul>
+<p>Ezek voltak az elsődleges fényforrások, viszont bármely test visszaveri a ráeső fény egy részét, így ezek a testek <strong style="color:rgb(11,76,5)"><strong>másodlagos fényforrások</strong></strong>.</p>
+<ul>
+<li><strong style="color:rgb(11, 76, 5)">Fénysugár</strong> : A pálya (görbe), amely mentén a fény terjed</li>
+<li><strong style="color:rgb(11, 76, 5)">Fénynyaláb</strong> : Több fénysugár, amiket együtt vizsgálunk<br>
+Fénynyaláb lehet :
+<ul>
+<li>párhuzamos</li>
+<li>széttartó (divergens)</li>
+<li>összetartó (konvergens)</li>
+</ul>
+</li>
+</ul>
+<figure>
+<p align="center">
+  <img src="nyalabokabrakocka.svg" alt="init_result" style="width:60%">
+  <figcaption><h3 align="center">Ábra 1.   Nyalábok</h3></figcaption>
+</p>
+</figure>
+<p><small><small><small><em><a href="#0-tartalomjegyz%C3%A9k">Tartalomjegyzék</a></em></small></small></small></p>
+<h2 id="2-geometriai-optika-alapelvei-elm%C3%A9let">2. Geometriai optika alapelvei [<em>elmélet</em>]</h2>
+<ul>
+<li>Homogén közegben a fény egyenes vonalban terjed</li>
+<li>A fénysugarak egymástól függetlenül terjednek</li>
+<li>a fénysugarak terjedése megfordítható, tehát két pont közt mindkét irányban ugyanaz a fénysugár, ugyanazt a pályát teszi meg a fény A pontból B pontba és B pontból A pontba</li>
+<li>A geometriai optika akkor alkalmazható, ha az optikai rendszer (karakterisztikus) mérete sokkal nagyobb, mint a fénysugarak hullámhossza</li>
+<li>Érvényes a Fermat-elv</li>
+</ul>
+<p><small><small><small><em><a href="#0-tartalomjegyz%C3%A9k">Tartalomjegyzék</a></em></small></small></small></p>
+<h2 id="3-f%C3%A9nyvisszaver%C5%91d%C3%A9s-%C3%A9s-f%C3%A9nyt%C3%B6r%C3%A9s-t%C3%B6rv%C3%A9nyei-elm%C3%A9let">3. Fényvisszaverődés és fénytörés törvényei [<em>elmélet</em>]</h2>
+<p>Ha a fénysugár két, optikailag különböző közeg határfelületére esik két dolog fog történni:</p>
+<ul>
+<li>
+<p>A fénysugár egy része visszaverődik a felületről, ez a <strong style="color:rgb(11, 76, 5)">fényvisszaverődés</strong></p>
+</li>
+<li>
+<p>A fénysugár másik része áthalad a közeghatáron és irányt változtatva halad tovább a közegben, amibe behatolt. Ez a <strong style="color:rgb(11, 76, 5)">fénytörés</strong> jelensége</p>
+</li>
+</ul>
+<h3 id="t%C3%B6r%C3%A9smutat%C3%B3"><em>Törésmutató</em></h3>
+<p>A közegek jellemzésére a <strong style="color:rgb(11, 76, 5)">törésmutató</strong> mennyiséget használjuk, amit <strong style="color:rgb(11, 76, 5)">n</strong>-el jelölünk. A törésmutató a fénysebesség és az adott anyagban a fény terjedési sebességének hányadosa. Ez az <strong>abszolút törésmutató</strong>, amely a vákuumbeli fénysebességhez (<strong style="color:rgb(11, 76, 5)">c</strong>) viszonyítva adja meg a törésmutatót.
+$$
+n=\frac{c}{v}
+$$</p>
+<p>Kísérletileg kimérhetőek és elméleti síkon is többféleképpen igazolhatóak a fénytörés és a fényvisszaverődés törvényei, tehát a kapcsolat a <strong style="color:rgb(11, 76, 5)">beesési</strong>, a <strong style="color:rgb(11, 76, 5)">visszaverődési</strong> és a <strong style="color:rgb(11, 76, 5)">megtört</strong> fénysugár szöge, valamint a közegre jellemző <strong style="color:rgb(11, 76, 5)">törésmutató</strong>k közt. A törvények a következők:</p>
+<ul>
+<li>
+<p>A beeső, a megtört (áthaladt) és a visszavert fénysugár mind <strong>egy síkban vannak</strong></p>
+</li>
+<li>
+<p>a beesési merőlegeshez mérve (ez az az egyenes amely merőleges a két közeg határfelületére a beesési pontban) a <strong style="color:rgb(11, 76, 5)">beesési szög</strong> és a <strong style="color:rgb(11, 76, 5)">visszaverődési szög</strong> mértéke <strong>egyenlő</strong>
+$$
+\vert \hat {i_1}\vert=\vert \hat {i_3}\vert
+$$</p>
+</li>
+<li>
+<p>Mindig érvényes a <strong>Snellius-Descartes-töréstörvény</strong>, ez a következő:
+$$
+n_1\cdot \sin(i_1) = n_2\cdot \sin(i_2),
+$$
+ahol <strong style="color:rgb(11, 76, 5)">n<sub>1</sub></strong> az 1-es, <strong style="color:rgb(11, 76, 5)">n<sub>2</sub></strong> pedig a 2-es közeg abszolút törésmutatója, <strong style="color:rgb(11, 76, 5)">sin(i<sub>1</sub>)</strong> a beesési szög szinusza, <strong style="color:rgb(11, 76, 5)">sin(i<sub>2</sub>)</strong> pedig a törési szög szinusza</p>
+</li>
+</ul>
+<figure>
+<p align="center" >
+  <img src="torestorvenyabrakocka.svg" style="width:80%">
+  <figcaption><h3 align="center">Ábra 2. - Fénytörés és fényvisszaverődés törvényei</h3></figcaption>
+</p>
+</figure>
+<p><small><small><small><em><a href="#0-tartalomjegyz%C3%A9k">Tartalomjegyzék</a></em></small></small></small></p>
+<h2 id="4-a-fermat---elv-elm%C3%A9let">4. A Fermat - elv [<em>elmélet</em>]</h2>
+<p><em>Bármely fénysugár egy tetszőleges optikai rendszerben
+mindig olyan pályát követ, amelyre nézve a kezdő és végpontok
+közötti terjedési idő minimális vagy maximális (legtöbb esetben minimális).</em></p>
+<p>Másképpen megfogalmazva:</p>
+<p><em>Bármely közegben A és B pontok között a fény azon a görbén halad, amely mentén az optikai útnak szélsőértéke van.</em></p>
+<p>Az optikai út <strong style="color:rgb(11, 76, 5)">L</strong> a megtett távolság és a törésmutató szorzata egy közegben. Ha több közegünk van, akkor ez összeadódik.</p>
+<p>$$
+L=n_1\cdot l_1 + n_2\cdot l_2 + n_3\cdot l_3 + ... + n_N\cdot l_N
+$$</p>
+<p><small><small><small><em><a href="#0-tartalomjegyz%C3%A9k">Tartalomjegyzék</a></em></small></small></small></p>
+<h2 id="5-t%C3%B6r%C3%A9st%C3%B6rv%C3%A9ny-levezet%C3%A9se-opcion%C3%A1lis-levezet%C3%A9s">5. Töréstörvény levezetése [<em>opcionális levezetés</em>]</h2>
+<p>A Fermat-elvből kiindulva középiskolás (11. osztályos) matematikai számításokat használva egyértelműen kimutatható a töréstörvény.<br/>
+Vegyünk tetszőleges két pontot (<strong>A</strong> és <strong>B</strong>) két közegben, melyet egy határfelület választ el. A két közeg <strong style="color:rgb(11, 76, 5)">n<sub>1</sub></strong> és <strong style="color:rgb(11, 76, 5)">n<sub>2</sub></strong> törésmutatóval rendelkeznek.</p>
+<figure>
+<p align="center" >
+  <img src="fermatelveslevezeteskocka.svg" style="width:70%">
+  <figcaption><h3 align="center">Ábra 3. - Fénytörés törvényének levezetése </h3></figcaption>
+</p>
+</figure>
+<br/>
+<p>Felírjuk <strong>AOX</strong> háromszögben a Pitagorasz-tételt, kifejezve <strong style="color:rgb(115, 103, 10)">l<sub>1</sub></strong>-et (átfogó), ami a fénysugár által megtett út az 1-es közegben.
+$$
+l_1\space^2=x^2+h_1\space ^2
+$$
+$$
+l_1=\sqrt{x^2+h_1\space ^2}
+$$
+Felírjuk <strong>BCX</strong> háromszögben is a Pitagorasz-tételt, kifejezve <strong style="color:rgb(115, 103, 10)"> l<sub>2</sub></strong>-t (átfogó), ami a fénysugár által megtett út a 2-es közegben.<br/> <strong>[CX]</strong> szakasz hossza: <strong>D - x</strong>
+$$
+l_2\space^2=(D-x)^2+h_2\space ^2
+$$
+$$
+l_2=\sqrt{(D-x)^2+h_2\space ^2}
+$$
+A Fermat elv azt mondja ,hogy az optikai útnak szélsőértéke kell legyen. Felírjuk az optikai utat <strong>A</strong>-ból  <strong>B</strong>-be
+$$
+L= n_1\cdot l_1 + n_2\cdot l_2
+$$
+$$
+L= n_1\cdot \sqrt{x^2+h_1\space ^2} + n_2\cdot \sqrt{(D-x)^2+h_2\space ^2}
+$$
+Szélsőértékét keresünk <strong style="color:rgb(115, 103, 10)">L</strong>-nek. <strong style="color:rgb(115, 103, 10)">L</strong> csakis az <strong style="color:rgb(76, 21, 21)">x</strong> hossztól függ, a többi mennyiség mind állandó, tehát a szélsőértékfeltétel a következő:
+$$
+\frac{\mathrm dL}{\mathrm dx}=0
+$$
+kiszámítjuk a bal oldalt:
+$$
+\frac{\mathrm dL}{\mathrm dx}=\frac{\mathrm d}{\mathrm dx}(n_1\cdot \sqrt{x^2+h_1\space ^2} + n_2\cdot \sqrt{(D-x)^2+h_2\space ^2})=
+$$
+$$
+n_1\cdot \frac{1}{2\cdot\sqrt{x^2+h_1\space ^2}}\cdot\frac{\mathrm d}{\mathrm dx}(x^2+h_1)\space ^2 + n_2\cdot\frac{1}{2\cdot\sqrt{(D-x)^2+h_2\space ^2}}\cdot\frac{\mathrm d}{\mathrm dx}((D-x)^2+h_2\space^2)=
+$$
+$$
+n_1\cdot \frac{1}{2\cdot\sqrt{x^2+h_1\space ^2}}\cdot 2\cdot x\space + n_2\cdot\frac{1}{2\cdot\sqrt{(D-x)^2+h_2\space ^2}}\cdot2\cdot (D-x)\cdot(-1)\space=
+$$
+$$
+n_1\cdot \frac{x}{\sqrt{x^2+h_1\space ^2}} - n_2\cdot\frac{D-x}{\sqrt{(D-x)^2+h_2\space ^2}}\space=
+$$
+$$
+n_1\cdot \frac{x}{l_1} - n_2\cdot\frac{D-x}{l_2}\space
+$$</p>
+<p>Észrevesszük, hogy az <strong>AOX</strong> és <strong>BCX</strong> háromszögben: $$\frac{x}{l_1} = \sin(i_1)$$ $$\frac{D-x}{l_2} = \sin(i_2)$$ <br/>
+Tehát<br>
+$$
+\frac{\mathrm dL}{\mathrm dx}=n_1\cdot \sin(i_1) - n_2\cdot\sin(i_2)=0
+$$
+Ebből tehát következik:
+$$
+n_1\cdot \sin(i_1) = n_2\cdot\sin(i_2)
+$$
+Tehát igazoltuk a töréstörvényt. Észrevehető továbbá, hogy <strong>A</strong> és <strong>B</strong> pontot bárhol, bármilyen pozícióba választom a közeg két oldalán, az eredmény a pozícióktól független, tehát általános esetben is érvényes a töréstörvény levezetése.<br/></p>
+<p><small><small><small><em><a href="#0-tartalomjegyz%C3%A9k">Tartalomjegyzék</a></em></small></small></small></p>
+<h2 id="6-a-t%C3%B6r%C3%A9st%C3%B6rv%C3%A9ny-ellen%C5%91rz%C3%A9se-k%C3%ADs%C3%A9rlet">6. A töréstörvény ellenőrzése [<em>kísérlet</em>]</h2>
+<p>A kísérlethez vegyünk egy átlátszó tálat, ami téglatest alakú és töltsük fel vízzel. Egy lézerpointerrel érdemes a kísérletet végezni, hiszen  eléggé megközelíti a pontszerű viselkedést, tehát a keskeny sugarú nyaláb jól látható lesz az edény falán. Egy másik kiküszöbölhető jelenség a diszperzió (<strong style="color:rgb(12, 12, 66)"><a href="#7-diszperzi%C3%B3-sz%C3%ADnekre-bont%C3%A1s">a diszperzióról később</a></strong>), hiszen a lézerpointer jó közelítéssel monokromatikus, egyszínű ( λ = 650 nm hullámosszú kapható könnyedén használni) .</p>
+<figure>
+<p align="center" >
+  <img src="SnelliusDescatresliserletkocka.svg" style="width:70%">
+  <figcaption><h3 align="center">Ábra 4. - Kísérleti berendezés felülnézetből </h3></figcaption>
+</p>
+</figure> 
+<ul>
+<li>Meghatározzuk az <strong style="color:rgb(11, 76, 5)">x</strong> = 0 koordinátát a szögmérő segítségével. Lehetséges másképp is, ha előre az edényre beosztásokat karcolunk</li>
+</ul>
+<figure>
+<p align="center" >
+  <img src="szogmerokocka.svg" style="width:70%">
+  <figcaption><h3 align="center">Ábra 5. - Az x=0 koordináta meghatározása </h3></figcaption>
+</p>
+</figure> 
+<ul>
+<li>
+<p>Az <strong style="color:rgb(11, 76, 5)"><strong>i<sub>1</sub></strong></strong> beesési szög közvetlenül mérhető a szögmérő korongon, számológéppel pedig kiszámolható <strong style="color:rgb(11, 76, 5)"><strong>sin(i<sub>1</sub>)</strong> </strong></p>
+</li>
+<li>
+<p>A víz törésmutatója, <strong style="color:rgb(11, 76, 5)">n</strong> ismert nagy pontossággal, a vörös (λ = 650 nm hullámhosszú) fényre ez az érték <strong style="color:rgb(11, 76, 5)">n</strong> = 1.33257. (A kísérletünk során lesznek eltérések ettől az értéktől)</p>
+</li>
+<li>
+<p><strong style="color:rgb(11, 76, 5)">x</strong> értékét le tudjuk mérni az edény falán, ekkor <strong style="color:rgb(11, 76, 5)">y</strong> értéke az edény szélessége</p>
+</li>
+<li>
+<p>Ha a fénysugár nem a közeghatárral szemközti, hanem az edény oldalsó falára esik, akkor <strong style="color:rgb(11, 76, 5)">y</strong> értékét le tudjuk mérni az edény oldalsó falán, ekkor <strong style="color:rgb(11, 76, 5)">x</strong> értéke az edény falán mérve a belépési ponttól, a 0 koordinátától mérem az edény végéig.</p>
+</li>
+<li>
+<p>a levegő törésmutatóját 1-nek tekintjük</p>
+</li>
+</ul>
+<p>Tehát ismerve a mérendő mennyiségeket felírjuk a töréstörvényt:
+$$
+\sin(\hat i_1)=n\cdot\sin(\hat i_2)
+$$
+Behelyettesítve az ismert mennyiségeket
+$$
+\sin(\hat i_1)=n\cdot\frac{x}{\sqrt{x^2+y^2}}
+$$</p>
+<p>Ábrázolva egy grafikonon sin(<strong>i<sub>1</sub></strong>)-et sin(<strong>i<sub>2</sub></strong>) függvényében az ábrázolt pontok egy egyenesre illeszkednek majd. Ennek  az egyenesnek meghatározva az iránytényezőjét, vissza kell kapnunk <strong color="rgb(11,76,5)">n</strong> értékét. A kísérlet során léphetnek fel pontatlanságok, de az eredmény találni fog jó közelítéssel a már ismert törésmutató értékkel, így igazolhatjuk, hogy a töréstörvény nem csak elméletileg, hanem kísérletben is, a valóságban igaz.</p>
+<h3 id="a-t%C3%B6r%C3%A9st%C3%B6rv%C3%A9ny-k%C3%ADs%C3%A9rleti-ellen%C5%91rz%C3%A9se">A töréstörvény kísérleti ellenőrzése</h3>
+<p>link: https://www.youtube.com/embed/gzam8-hhNO0</p>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/gzam8-hhNO0" title="A Snellius - Descartes töréstörvény kísérleti ellenőrzése" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</br>
+</br>
+</br>
+<p><strong><big> Adatfeldolgozás a fénytöréstörvény-kísérlet után </big></strong>
+link: https://www.youtube.com/embed/hv2aJ3Yq--8</p>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/hv2aJ3Yq--8" title="Töréstörvény - kísérleti eredmények feldolgozása" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><small><small><small><em><a href="#0-tartalomjegyz%C3%A9k">Tartalomjegyzék</a></em></small></small></small></p>
+<h2 id="7-diszperzi%C3%B3-sz%C3%ADnekre-bont%C3%A1s">7. Diszperzió, színekre bontás</h2>
+<p>A természetes fény és a legtöbb fényforrás is &quot;fehér&quot; fény, tehát több, különböző hullámhosszú fény összege, szuperpozíciója, egymásra tevődése. <br/></p>
+<p>A <strong>diszperzió</strong> fogalma azzal kapcsolatos, hogy egy hullám terjedési sebessége függ a hullám frekvenciájától (tehát hullámhosszától is).<br/></p>
+<p>Ez a fény esetén azt jelenti, hogy adott hullámhosszú fény egy átlátszó közegben más sebességgel terjed, mint egy más hullámhosszú fény. <sup>(1)</sup> <br/></p>
+<p><sup>(1)</sup><small>ez a sebesség nem a fénysebesség, hanem a közeg elektronjai által keltett elektromágneses hullámok szuperpozíciójának, vagyis összegének a terjedési sebessége , tehát a fénysebesség továbbra is állandó, c = 299 792 458 m/s ! A kíváncsiabbaknak itt található egy angol nyelvű, magasabb szintű, de jól követhető, vizuális magyarázat erről a jelenségről.  <a href="https://youtu.be/KTzGBJPuJwM?si=Xbgp-1il2tdr_prH">  <strong>link a videóhoz</strong>  </a></small>.</p>
+<p>Mivel <strong style="color:rgb(11, 76, 5)">n</strong> törésmutatót úgy határoztuk meg, mint a fénysebesség és a közegbeli terjedési sebesség hányadosa , így a törésmutató is más lesz különböző hullámhosszakra. <strong style="color:rgb(11, 76, 5)">n</strong> <strong style="color:rgb(11, 76, 5)">λ</strong> függvénye, <strong style="color:rgb(11, 76, 5)">n</strong> függ <strong style="color:rgb(11, 76, 5)"> λ</strong>-tól.
+$$n=n(\lambda)$$</p>
+<p><small><small><small><em><a href="#0-tartalomjegyz%C3%A9k">Tartalomjegyzék</a></em></small></small></small></p>
+<h2 id="8-sz%C3%ADnekre-bont%C3%A1s-k%C3%ADs%C3%A9rlet">8. Színekre bontás [<em>kísérlet</em>]</h2>
+<p>Kísérletileg bebizonyíthatjuk ezen kapcsolat létezését.<br/>Építsük meg a következő kísérleti berendezést:</p>
+<figure>
+<p align="center">
+  <img src="VIZES PRIZMA[90_fok]kocka.svg" style="width:70%">
+  <figcaption><h3 align="center">Ábra 6. - Kísérleti berendezés oldalnézetből </h3></figcaption>
+</p>
+</figure> 
+<ul>
+<li>
+<p>Egy tálba belehelyezünk egy síktükröt, az alját támasszuk meg, hogy ne mozduljon el. Szükségünk lesz továbbá egy kevésbé széttartó, keskeny nyalábot létrehozó fényforrásra</p>
+</li>
+<li>
+<p>Ki kell számítanunk a tükör és a vízszintes közti szög szinuszát (<strong style="color:rgb(11, 76, 5)"> sin(α)</strong> ) .
+A doboz oldalán felülről nézve, egy vonalzó segítségével bejelöljük a tükör aljának helyét az edény falán, ez a kezdeti 0 koordináta.</p>
+</li>
+<li>
+<p>Feltöltjük vízzel az edényt. A 0 koordinátától a doboz oldalán nézve megmérjük vízszintes irányban az <strong style="color:rgb(11, 76, 5)">x<sub>1</sub></strong> távolságot, amit a tükörfelület és a vízfelület találkozási pontjáig mérünk.</p>
+</li>
+<li>
+<p>Ahol a vízfelület és a tükörfelület találkozik egy bejegyzést rajzolunk. Kivéve a tükröt a vízből megmérhetjük a tükör vízben levő részének hosszát, ez <strong style="color:rgb(11, 76, 5)">x<sub>2</sub></strong>. Így:
+$$
+\cos(\alpha)= \frac{x_1}{x_2}
+$$
+$$
+\sin(\alpha)= \frac{\sqrt{x_2\space^2-x_1\space^2}}{x_2}
+$$</p>
+</li>
+<li>
+<p>Megmérjük a vízszintet (<strong style="color:rgb(11, 76, 5)">y<sub>1</sub></strong>)</p>
+</li>
+<li>
+<p>Meg kell mérnünk továbbá a vízfelület és a tükörfelület találkozási pontjától a távolságot az ernyőig (falig), ahol nézni fogjuk a felbontott fénysugarakat. Ez a távolság <strong style="color:rgb(11, 76, 5)">D</strong>. <br/></p>
+</li>
+<li>
+<p>Amikor a keskeny fénysugárral megvilágítjuk függőlegesen a tükröt a vizen keresztül, fontos , hogy egy meghatározott helyen tegyük ezt. Érdemes lemérni, hogy <strong style="color:rgb(11, 76, 5)">x<sub>1</sub></strong> hányad része az ábrán bejelölt <strong style="color:rgb(11, 76, 5)">ε · x<sub>1</sub></strong> távolság.</p>
+</li>
+</ul>
+<p>Ezek az értékek állandók a kísérlet során. A táblázatba beírhatóak ezek az értékek:</p>
+<table>
+<thead>
+<tr>
+<th><strong>x<sub>1</sub></strong></th>
+<th><strong>x<sub>2</sub></strong></th>
+<th><strong>D</strong></th>
+<th><strong>ε</strong></th>
+<th><strong>y<sub>1</sub></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 koordináta és a <br/>két felület találkozása<br/>vízszintesen mérve</td>
+<td>tükör vízben <br/>levő hossza</td>
+<td>faltól (vízfelület - tükör)<br/> találkozási pontig</td>
+<td><strong>x1</strong> hányad részénél <br/>jut be a fénysugár<br/> a vízbe</td>
+<td>vízszint</td>
+</tr>
+<tr>
+<td>.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<br/>
+<p>Ha megvagyunk az állandó mennyiségek megmérésével, akkor világítsuk meg a vizet merőlegesen felülről. A falon (ernyőn) színes csíkok jelennek meg szivárványszerűen.<br/> Mi megkeressük a középsőt és két jól látható színt választunk. Ezeknek megmérjük a magasságát a padlóhoz képest, ebből pedig kivonjuk a tükör aljának magasságát a padlóhoz képest. ez lesz <strong style="color:rgb(11, 76, 5)">H<sub>1</sub></strong> és <strong style="color:rgb(11, 76, 5)">H<sub>2</sub></strong>.</p>
+<h3 id="v%C3%A9gs%C5%91-k%C3%A9plet-levezet%C3%A9se-n-%C3%A9s-h-k%C3%B6z%C3%B6tt">Végső képlet levezetése n és H között</h3>
+<p>Most a törésmutató <strong style="color:rgb(11, 76, 5)">n</strong>  és a falon mért <strong style="color:rgb(11, 76, 5)">H</strong> magasság közötti kapcsolat matematikai levezetése következik: <br/></p>
+<ul>
+<li>
+<p>A vizen áthaladva a fény nem törik meg, hiszen merőleges beesés esetén sin(0)=0.</p>
+</li>
+<li>
+<p>A tükörről való visszaverődés során a fénysugár továbbhalad a vízben és a víz-levegő határfelülethez érkezik. A <a href="#8-sz%C3%ADnekre-bont%C3%A1s-k%C3%ADs%C3%A9rlet"><strong style="color:rgb(12, 12, 66)">6. Ábrán</strong></a> is látszik, hogy a beesési szög ezen a határfelületen = <strong>2 · α</strong></p>
+</li>
+<li>
+<p>Felírhatjuk a töréstörvényt, ahol <strong>β</strong> a kilépő sugár szöge lesz
+$$
+n\cdot\sin(2\alpha)=\sin(\beta)
+$$
+$$
+2\cdot n\cdot\sin(\alpha)\cos(\alpha)=\sin(\beta)
+$$</p>
+</li>
+<li>
+<p>A vízből való kilépés után  tudjuk, hogy:
+$$
+\tg(90-\beta)=\ctg(\beta)=\frac{h}{d}=\frac{\cos(\beta)}{\sin(\beta)},\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space [\star]
+$$</p>
+</li>
+</ul>
+<p>,ahol
+$$
+h = H - y_1 - y_0
+$$
+<strong style="color:rgb(11, 76, 5)">y<sub>0</sub></strong> a tükör aljának a magassága a földhöz képest</p>
+<p>A bejövő fénysugár menetét követve háromszögekből kihozható a következő összefüggés:
+$$
+d = D - \epsilon\cdot x_1(1+\tg\alpha\cdot\tg 2\alpha)
+$$</p>
+<ul>
+<li>
+<p>És:
+$$
+\sin^2(\beta)+\cos^2(\beta)=1
+$$
+$$
+\cos(\beta)=\sqrt{1-\sin^2(\beta)}=\sqrt{1-[2\cdot n\cdot\sin(\alpha)\cos(\alpha)]\space^2}=\sqrt{1-4n^2\cdot\sin(\alpha)\cos(\alpha)}
+$$</p>
+</li>
+<li>
+<p>Folytatva:
+$$
+[\star]\Longrightarrow\space \frac{h^2}{d^2}=\frac{\cos^2(\beta)}{\sin^2(\beta)}=\frac{1-4n^2\cdot\sin(\alpha)\cos(\alpha)}{n^2\cdot sin^2(\alpha)}
+$$</p>
+</li>
+<li>
+<p>Ezt az egyenletet átrendezzük
+$$
+n=\frac{1}{\sin(\alpha)\cdot\sqrt{[\frac{h^2}{d^2}+4\cos^2(\alpha)]}}
+$$</p>
+</li>
+<li>
+<p>Megkaptuk a végső képletet:
+$$
+n=\frac{1}{\sin{\alpha}\cdot\sqrt{(\frac{H-y_1-y_0}{{D-\epsilon\cdot x_1\cdot(\space\tg(2\alpha)\tg(\alpha)\space)\space}})^2+4\cos^2(\alpha)}}
+$$
+A végső képletben a trigonometrikus tagok mind meghatározhatók x1 és x2 ismeretében:</p>
+</li>
+</ul>
+<p>$$\cos^2(\alpha)=\frac{x_1}{x_2}$$
+$$\sin^2(\alpha)=\frac{\sqrt{x_2\space^2-x_1\space^2}}{x_2}$$
+$$\tg(\alpha)=\frac{\sqrt{x_2\space^2-x_1\space^2}}{x_1}$$
+$$\tg(2\alpha)\cdot\tg(\alpha)=\frac{2}{\frac{1}{\tg(\alpha)}-\tg(\alpha)}=\frac{2}{\frac{x_1}{\sqrt{x_2\space^2-x_1\space^2}}-\frac{\sqrt{x_2\space^2-x_1\space^2}}{x_1}}$$
+Az eredményeinket bevezethetjük a követező táblázatba:</p>
+<table>
+<thead>
+<tr>
+<th>Mérés sorszám</th>
+<th>H<sub>1</sub></th>
+<th>H<sub>2</sub></th>
+<th>n<sub>1</sub></th>
+<th>n<sub>2</sub></th>
+<th>ΔH</th>
+<th>Δn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Az eredményeink ellenőrzésére ismernünk kell a színekhez tartozó fénysugarak hullámhosszait, hogy a törésmutató értéket összehasonlíthassuk a pontos értékekkel. A hullámhosszakhoz tartozó törésmutatók az alábbi táblázatban találhatóak meg:</p>
+<table>
+<thead>
+<tr>
+<th>λ</th>
+<th>n</th>
+<th>szín</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>1,34451</td>
+<td><span style="background-color:rgb(211, 0, 255)"><span style="color:rgb(211,0,255)">_____________</span></span></td>
+</tr>
+<tr>
+<td>425</td>
+<td>1,34235</td>
+<td><span style="background-color:rgb(80, 1, 251)"><span style="color:rgb(80,1,251)">_____________</span></span></td>
+</tr>
+<tr>
+<td>450</td>
+<td>1,34055</td>
+<td><span style="background-color:rgb(0, 51, 255)"><span style="color:rgb(0,51,255)">_____________</span></span></td>
+</tr>
+<tr>
+<td>475</td>
+<td>1,33903</td>
+<td><span style="background-color:rgb(0, 181, 255)"><span style="color:rgb(0,181,255)">_____________</span></span></td>
+</tr>
+<tr>
+<td>500</td>
+<td>1,33772</td>
+<td><span style="background-color:rgb(0, 254, 130)"><span style="color:rgb(0,254,130)">_____________</span></span></td>
+</tr>
+<tr>
+<td>525</td>
+<td>1,33659</td>
+<td><span style="background-color:rgb(56, 254, 0)"><span style="color:rgb(56,254,0)">_____________</span></span></td>
+</tr>
+<tr>
+<td>550</td>
+<td>1,33560</td>
+<td><span style="background-color:rgb(146, 254, 1)"><span style="color:rgb(146,254,1)">_____________</span></td>
+</tr>
+<tr>
+<td>575</td>
+<td>1,33472</td>
+<td><span style="background-color:rgb(237, 227, 41)"><span style="color:rgb(237,227,41)">_____________</span></td>
+</tr>
+<tr>
+<td>600</td>
+<td>1,33393</td>
+<td><span style="background-color:rgb(254, 177, 1)"><span style="color:rgb(254,177,1)">_____________</span></td>
+</tr>
+<tr>
+<td>625</td>
+<td>1,33322</td>
+<td><span style="background-color:rgb(255, 78, 0)"><span style="color:rgb(255,78,0)">_____________</span></td>
+</tr>
+<tr>
+<td>650</td>
+<td>1,33257</td>
+<td><span style="background-color:rgb(254, 0, 0)"><span style="color:rgb(254,0,0)">_____________</span></td>
+</tr>
+<tr>
+<td>675</td>
+<td>1,33197</td>
+<td><span style="background-color:rgb(254, 0, 0)"><span style="color:rgb(254,0,0)">_____________</span></td>
+</tr>
+<tr>
+<td>700</td>
+<td>1,33141</td>
+<td><span style="background-color:rgb(251, 1, 2)"><span style="color:rgb(251,1,2)">_____________</span></td>
+</tr>
+</tbody>
+</table>
+<p align="center">Táblázat 1. - Adott hullámhossz esetén a víz törésmutatójának értéke </p>
+<h3 id="sz%C3%ADnbont%C3%A1sos-k%C3%ADs%C3%A9rleti-%C3%BAtmutat%C3%B3-vide%C3%B3">Színbontásos kísérleti útmutató videó</h3>
+<p>link: https://www.youtube.com/embed/xwHbIHBITIk</p>
+<iframe width="500" height="300" src="https://www.youtube.com/embed/xwHbIHBITIk" title="A fény színekre bontása, diszperzió" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="#0-tartalomjegyz%C3%A9k"><em>Tartalomjegyzék</em></a></p>
+
+</body>
+</html>
